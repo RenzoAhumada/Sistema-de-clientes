@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface ClienteRepository extends JpaRepository<Clientes, Integer >{
     
-    @Query("SELECT c FROM clientes c WHERE c.clientes.id =:p")
+    @Query("SELECT c FROM siste,a_venta_productos c WHERE c.clientes.id =:p")
     Optional<Clientes> findByClientesid (@Param("p") Integer idClientes);
     
 }
